@@ -36,11 +36,13 @@ function Prototype() {
           </div>
         </section>
 
-        <div style={{ width: "100%", height: "90vh", overflow: "hidden" }}>
+        <div className="flex justify-center px-4 py-6">
           <iframe
             title="FlexPOS onboarding prototype"
-            style={{ border: "none", width: "100%", height: "100%" }}
-            src="https://embed.figma.com/proto/lJH1sQMRckEgrwtfUsJ69i/Hovedopgave?node-id=21-468&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A468&embed-host=share"
+            style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+            width={800}
+            height={450}
+            src="https://embed.figma.com/proto/lJH1sQMRckEgrwtfUsJ69i/Hovedopgave?node-id=21-468&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A468&embed-host=share"
             allowFullScreen
             loading="lazy"
           />
