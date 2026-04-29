@@ -47,7 +47,7 @@ function Prototype() {
                 src="https://embed.figma.com/proto/lJH1sQMRckEgrwtfUsJ69i/Hovedopgave?node-id=21-468&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A468&embed-host=share&hide-ui=1&bg-color=FFFFFF"
                 scrolling="no"
                 allowFullScreen
-                loading="lazy"
+                loading="eager"
                 className="absolute top-0 left-0 w-full h-full border-0"
               />
             </div>
