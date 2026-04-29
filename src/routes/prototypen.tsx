@@ -16,6 +16,12 @@ export const Route = createFileRoute("/prototypen")({
         content: "Afprøv det interaktive onboarding-flow.",
       },
     ],
+    links: [
+      { rel: "preconnect", href: "https://embed.figma.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://www.figma.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://static.figma.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://embed.figma.com" },
+    ],
   }),
   component: Prototype,
 });
