@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useRef, useState } from "react";
+import { Maximize2, Minimize2 } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const Route = createFileRoute("/prototypen")({
   head: () => ({
@@ -42,23 +45,8 @@ function Prototype() {
           </div>
         </section>
 
-        <div className="px-4 py-6">
-          <div className="mx-auto w-full max-w-5xl bg-white p-[15px] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
-            <div
-              className="relative w-full overflow-hidden rounded-lg bg-white"
-              style={{ paddingBottom: "60%" }}
-            >
-              <iframe
-                title="FlexPOS onboarding prototype"
-                src="https://embed.figma.com/proto/lJH1sQMRckEgrwtfUsJ69i/Hovedopgave?node-id=21-468&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A468&embed-host=share&hide-ui=1&bg-color=FFFFFF"
-                scrolling="no"
-                allowFullScreen
-                loading="eager"
-                className="absolute top-0 left-0 w-full h-full border-0"
-              />
-            </div>
-          </div>
-        </div>
+        <PrototypeEmbed />
+
 
         <div className="bg-primary on-primary text-primary-foreground">
           <div className="mx-auto max-w-4xl px-4 py-8 text-center">
