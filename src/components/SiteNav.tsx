@@ -17,27 +17,27 @@ export function SiteNav() {
       </a>
 
       {/* Top utility bar */}
-      <div className="bg-primary text-primary-foreground text-xs hidden md:block">
+      <div className="bg-primary text-primary-foreground text-[13px] hidden md:block">
         <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="inline-flex items-center gap-1.5">
-              <Phone size={12} aria-hidden="true" />
+            <span className="inline-flex items-center gap-2">
+              <Phone size={13} aria-hidden="true" />
               77 34 34 80
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Mail size={12} aria-hidden="true" />
+            <span className="inline-flex items-center gap-2">
+              <Mail size={13} aria-hidden="true" />
               support@amero.dk
             </span>
-            <span className="opacity-80">Vidensunivers</span>
-            <span className="opacity-80">Supportunivers</span>
+            <span>Vidensunivers</span>
+            <span>Supportunivers</span>
           </div>
-          <div className="inline-flex items-center gap-1.5">
-            <span className="inline-flex text-accent" aria-hidden="true">
-              <Star size={12} fill="currentColor" />
-              <Star size={12} fill="currentColor" />
-              <Star size={12} fill="currentColor" />
-              <Star size={12} fill="currentColor" />
-              <Star size={12} fill="currentColor" />
+          <div className="inline-flex items-center gap-2">
+            <span className="inline-flex gap-0.5" style={{ color: "#00B67A" }} aria-hidden="true">
+              <Star size={13} fill="currentColor" strokeWidth={0} />
+              <Star size={13} fill="currentColor" strokeWidth={0} />
+              <Star size={13} fill="currentColor" strokeWidth={0} />
+              <Star size={13} fill="currentColor" strokeWidth={0} />
+              <Star size={13} fill="currentColor" strokeWidth={0} />
             </span>
             <span>+4,8 rating på Trustpilot</span>
           </div>
@@ -49,7 +49,8 @@ export function SiteNav() {
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="text-2xl font-bold tracking-tight text-primary"
+            className="text-3xl font-extrabold tracking-tight text-primary"
+            style={{ fontFamily: "'Nunito', 'Mulish', system-ui, sans-serif", letterSpacing: "-0.02em" }}
           >
             Amero
           </Link>
