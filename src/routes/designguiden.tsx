@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { SectionNav } from "@/components/SectionNav";
+
+const slug = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9æøå\s-]/g, "")
+    .replace(/\s+/g, "-");
 
 export const Route = createFileRoute("/designguiden")({
   head: () => ({
@@ -29,13 +36,17 @@ const sections = [
 ];
 
 function Designguide() {
+  const sectionItems = sections.map((title) => ({ id: slug(title), label: title }));
   return (
     <>
       <SiteNav />
+      <SectionNav
+        sections={[{ id: "intro", label: "Designguiden" }, ...sectionItems]}
+      />
       <main id="main">
-        <section className="bg-soft">
+        <section className="bg-soft" aria-labelledby="intro">
           <div className="mx-auto max-w-5xl px-4 py-12">
-            <h1 className="text-4xl sm:text-5xl text-primary">
+            <h1 id="intro" tabIndex={-1} className="text-4xl sm:text-5xl text-primary scroll-mt-24 focus:outline-none">
               Designguiden
             </h1>
             <p className="mt-4 text-lg max-w-2xl">
@@ -49,12 +60,13 @@ function Designguide() {
           {sections.map((title, i) => (
             <section
               key={title}
-              aria-labelledby={`section-${i}`}
+              aria-labelledby={slug(title)}
               className="bg-grey p-8 rounded-sm border border-primary/10"
             >
               <h2
-                id={`section-${i}`}
-                className="text-2xl text-primary border-b border-primary/20 pb-3"
+                id={slug(title)}
+                tabIndex={-1}
+                className="text-2xl text-primary border-b border-primary/20 pb-3 scroll-mt-24 focus:outline-none"
               >
                 {`${i + 1}. ${title}`}
               </h2>

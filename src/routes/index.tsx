@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { SectionNav } from "@/components/SectionNav";
 import { ShieldCheck, Clock, HandHeart, Quote, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -26,15 +27,23 @@ function Index() {
   return (
     <>
       <SiteNav />
+      <SectionNav
+        sections={[
+          { id: "intro", label: "Gør oplæringen tryg" },
+          { id: "fordele", label: "En tryggere hverdag" },
+          { id: "citat", label: "Citat" },
+          { id: "kom-i-gang", label: "Klar til at se det?" },
+        ]}
+      />
       <main id="main">
         {/* Hero — Z-pattern */}
-        <section className="bg-soft">
+        <section className="bg-soft" aria-labelledby="intro">
           <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-sm text-sm font-medium mb-4">
                 Nyt i FlexPOS
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary">
+              <h1 id="intro" tabIndex={-1} className="text-4xl sm:text-5xl lg:text-6xl text-primary scroll-mt-24 focus:outline-none">
                 Gør FlexPOS oplæringen tryg og ensartet
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-foreground/80 leading-relaxed">
@@ -72,10 +81,10 @@ function Index() {
         </section>
 
         {/* Value props — F-pattern */}
-        <section className="bg-background">
+        <section className="bg-background" aria-labelledby="fordele">
           <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
             <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl sm:text-4xl text-primary">
+              <h2 id="fordele" tabIndex={-1} className="text-3xl sm:text-4xl text-primary scroll-mt-24 focus:outline-none">
                 En tryggere hverdag i kassen
               </h2>
               <p className="mt-4 text-lg text-foreground/80">
@@ -120,8 +129,9 @@ function Index() {
         </section>
 
         {/* Social proof */}
-        <section className="bg-soft">
+        <section className="bg-soft" aria-labelledby="citat">
           <div className="mx-auto max-w-4xl px-4 py-16 lg:py-20">
+            <h2 id="citat" tabIndex={-1} className="sr-only scroll-mt-24 focus:outline-none">Citat</h2>
             <figure className="bg-white p-8 lg:p-12 rounded-sm shadow-sm border-l-4 border-accent relative">
               <Quote
                 size={48}
@@ -140,9 +150,9 @@ function Index() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-background">
+        <section className="bg-background" aria-labelledby="kom-i-gang">
           <div className="mx-auto max-w-4xl px-4 py-16 lg:py-20 text-center">
-            <h2 className="text-3xl sm:text-4xl text-primary">
+            <h2 id="kom-i-gang" tabIndex={-1} className="text-3xl sm:text-4xl text-primary scroll-mt-24 focus:outline-none">
               Klar til at se det i praksis?
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
