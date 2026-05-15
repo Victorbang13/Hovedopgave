@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { SectionNav } from "@/components/SectionNav";
+
+const slug = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9æøå\s-]/g, "")
+    .replace(/\s+/g, "-");
 
 export const Route = createFileRoute("/designguiden")({
   head: () => ({
