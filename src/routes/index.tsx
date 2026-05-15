@@ -27,15 +27,23 @@ function Index() {
   return (
     <>
       <SiteNav />
+      <SectionNav
+        sections={[
+          { id: "intro", label: "Gør oplæringen tryg" },
+          { id: "fordele", label: "En tryggere hverdag" },
+          { id: "citat", label: "Citat" },
+          { id: "kom-i-gang", label: "Klar til at se det?" },
+        ]}
+      />
       <main id="main">
         {/* Hero — Z-pattern */}
-        <section className="bg-soft">
+        <section className="bg-soft" aria-labelledby="intro">
           <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-sm text-sm font-medium mb-4">
                 Nyt i FlexPOS
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary">
+              <h1 id="intro" tabIndex={-1} className="text-4xl sm:text-5xl lg:text-6xl text-primary scroll-mt-24 focus:outline-none">
                 Gør FlexPOS oplæringen tryg og ensartet
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-foreground/80 leading-relaxed">
