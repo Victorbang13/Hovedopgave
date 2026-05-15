@@ -54,7 +54,7 @@ function Prototype() {
               to="/designguiden"
               className="inline-block bg-background text-primary px-6 py-3 rounded-sm font-medium hover:opacity-90"
             >
-              Se OBdesignguiden
+              Se Designguiden
             </Link>
           </div>
         </div>

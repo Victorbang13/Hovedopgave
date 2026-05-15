@@ -4,13 +4,13 @@ import { SiteNav, SiteFooter } from "@/components/SiteNav";
 export const Route = createFileRoute("/designguiden")({
   head: () => ({
     meta: [
-      { title: "OBdesignguiden — AMERO" },
+      { title: "Designguiden — AMERO" },
       {
         name: "description",
         content:
           "Digital design manual for OB / AMERO — skabelon til retningslinjer og elementer.",
       },
-      { property: "og:title", content: "OBdesignguiden — AMERO" },
+      { property: "og:title", content: "Designguiden — AMERO" },
       {
         property: "og:description",
         content: "Skabelon til den digitale design manual.",
@@ -36,7 +36,7 @@ function Designguide() {
         <section className="bg-soft">
           <div className="mx-auto max-w-5xl px-4 py-12">
             <h1 className="text-4xl sm:text-5xl text-primary">
-              OBdesignguiden
+              Designguiden
             </h1>
             <p className="mt-4 text-lg max-w-2xl">
               Digital design manual — en skabelon til retningslinjer for
