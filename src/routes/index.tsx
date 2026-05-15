@@ -150,9 +150,9 @@ function Index() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-background">
+        <section className="bg-background" aria-labelledby="kom-i-gang">
           <div className="mx-auto max-w-4xl px-4 py-16 lg:py-20 text-center">
-            <h2 className="text-3xl sm:text-4xl text-primary">
+            <h2 id="kom-i-gang" tabIndex={-1} className="text-3xl sm:text-4xl text-primary scroll-mt-24 focus:outline-none">
               Klar til at se det i praksis?
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
