@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
+import { SectionNav } from "@/components/SectionNav";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export const Route = createFileRoute("/prototypen")({
