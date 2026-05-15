@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { SectionNav } from "@/components/SectionNav";
 import { ShieldCheck, Clock, HandHeart, Quote, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
