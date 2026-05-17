@@ -33,10 +33,14 @@ export const Route = createRootRoute({
       { name: "description", content: "Et intuitivt onboarding-flow til FlexPOS, der gør oplæringen tryg og ensartet." },
       { name: "author", content: "AMERO" },
       { property: "og:title", content: "AMERO — FlexPOS Onboarding" },
-      { property: "og:description", content: "Et intuitivt onboarding-flow til FlexPOS." },
+      { property: "og:description", content: "Et intuitivt onboarding-flow til FlexPOS, der gør oplæringen tryg og ensartet." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "AMERO — FlexPOS Onboarding" },
+      { name: "twitter:description", content: "Et intuitivt onboarding-flow til FlexPOS, der gør oplæringen tryg og ensartet." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01e91c96-c04b-49c6-8051-277aec1977cd/id-preview-54ac0882--09c70f18-fdc2-4f90-91dd-60032b403648.lovable.app-1779003099775.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01e91c96-c04b-49c6-8051-277aec1977cd/id-preview-54ac0882--09c70f18-fdc2-4f90-91dd-60032b403648.lovable.app-1779003099775.png" },
     ],
     links: [
       {
