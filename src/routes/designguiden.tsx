@@ -20,7 +20,30 @@ export const Route = createFileRoute("/designguiden")({
   component: Designguide,
 });
 
-function ImageBox({ label = "Tilføj billede", ratio = "aspect-[16/9]" }: { label?: string; ratio?: string }) {
+function ImageBox({
+  label = "Tilføj billede",
+  ratio = "aspect-[16/9]",
+  src,
+  seed,
+}: {
+  label?: string;
+  ratio?: string;
+  src?: string;
+  seed?: string;
+}) {
+  const imageSrc = src ?? (seed ? `https://picsum.photos/seed/${encodeURIComponent(seed)}/1200/675` : undefined);
+
+  if (imageSrc) {
+    return (
+      <figure className={`${ratio} w-full rounded-sm overflow-hidden border border-primary/15 bg-grey/50 relative`}>
+        <img src={imageSrc} alt={label} className="w-full h-full object-cover" loading="lazy" />
+        <figcaption className="absolute bottom-2 left-2 text-xs bg-white/80 text-primary px-2 py-1 rounded-sm italic">
+          Midlertidigt billede
+        </figcaption>
+      </figure>
+    );
+  }
+
   return (
     <div
       className={`${ratio} w-full rounded-sm border-2 border-dashed border-primary/30 bg-grey/50 flex items-center justify-center text-sm opacity-60 italic`}
