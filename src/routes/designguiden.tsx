@@ -148,7 +148,7 @@ function Designguide() {
               de faste tilstande (normal, hover, active) for f.eks. primære og sekundære knapper.
             </p>
 
-            <ImageBox seed="atomic-design" label="Midlertidigt billede — Atomic Design oversigt" />
+            <ImageBox seed="atomic-design" label="Atomic Design oversigt" />
 
             <DoDontList
               dos={[
@@ -165,7 +165,7 @@ function Designguide() {
                 Et hotspot er en god måde at indikere tydeligt, hvad næste step er. Dette komponent bruges til at sikre,
                 at brugeren ved, hvad der skal ske, og altid kan læse sig frem til, hvad de skal gøre.
               </p>
-              <ImageBox seed="hotspot" label="Midlertidigt billede — Hotspot" />
+              <ImageBox seed="hotspot" label="Hotspot" />
             </div>
 
             <div className="pt-4 space-y-3">
@@ -174,7 +174,7 @@ function Designguide() {
                 Oversigten over opgaver er der for at visualisere, hvor langt brugeren er i flowet. Derudover indeholder
                 den også en hurtig udvej fra flowet, hvilket er vigtigt for, at brugeren kan føle sig tryg.
               </p>
-              <ImageBox seed="opgaveoversigt" label="Midlertidigt billede — Opgaveoversigten" />
+              <ImageBox seed="opgaveoversigt" label="Opgaveoversigten" />
             </div>
 
             <div className="pt-4 space-y-3">
@@ -184,7 +184,7 @@ function Designguide() {
                 som i fremtiden viser sig at kræve oplæring. Elementet er placeret ved login-skærmen, da det ikke bør
                 være nødvendigt at være logget ind — flowsne foregår i et sandbox-miljø.
               </p>
-              <ImageBox src="/user-uploads/7b823e83-71ed-4e1c-8518-883ef51d9566.png" label="Flow-bibliotek" />
+              <ImageBox src={flowBibliotekImg} label="Flow-bibliotek" />
             </div>
           </SectionShell>
 
@@ -207,7 +207,7 @@ function Designguide() {
               <ColorSwatch name="Mørkegrå / brødtekst" hex="#333333" textOn="dark" />
             </div>
 
-            <ImageBox seed="farver" label="Midlertidigt billede — farveanvendelse" />
+            <ImageBox seed="farver" label="farveanvendelse" />
 
             <DoDontList
               dos={[
@@ -232,7 +232,7 @@ function Designguide() {
               ønskede indhold forbliver tydeligt.
             </p>
 
-            <ImageBox seed="komposition" label="Midlertidigt billede — afstande og komposition" />
+            <ImageBox seed="komposition" label="afstande og komposition" />
 
             <DoDontList
               dos={[
@@ -302,7 +302,7 @@ function Designguide() {
               </table>
             </div>
 
-            <ImageBox seed="tone-of-voice" label="Midlertidigt billede — tone of voice" />
+            <ImageBox seed="tone-of-voice" label="tone of voice" />
           </SectionShell>
 
           {/* 5. Typografi */}
@@ -314,7 +314,7 @@ function Designguide() {
               brugere.
             </p>
 
-            <ImageBox seed="typografi" label="Midlertidigt billede — typografi-hierarki" />
+            <ImageBox seed="typografi" label="typografi-hierarki" />
 
             <DoDontList
               dos={[
