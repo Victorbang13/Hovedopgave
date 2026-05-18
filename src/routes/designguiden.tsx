@@ -20,7 +20,30 @@ export const Route = createFileRoute("/designguiden")({
   component: Designguide,
 });
 
-function ImageBox({ label = "Tilføj billede", ratio = "aspect-[16/9]" }: { label?: string; ratio?: string }) {
+function ImageBox({
+  label = "Tilføj billede",
+  ratio = "aspect-[16/9]",
+  src,
+  seed,
+}: {
+  label?: string;
+  ratio?: string;
+  src?: string;
+  seed?: string;
+}) {
+  const imageSrc = src ?? (seed ? `https://picsum.photos/seed/${encodeURIComponent(seed)}/1200/675` : undefined);
+
+  if (imageSrc) {
+    return (
+      <figure className={`${ratio} w-full rounded-sm overflow-hidden border border-primary/15 bg-grey/50 relative`}>
+        <img src={imageSrc} alt={label} className="w-full h-full object-cover" loading="lazy" />
+        <figcaption className="absolute bottom-2 left-2 text-xs bg-white/80 text-primary px-2 py-1 rounded-sm italic">
+          Midlertidigt billede
+        </figcaption>
+      </figure>
+    );
+  }
+
   return (
     <div
       className={`${ratio} w-full rounded-sm border-2 border-dashed border-primary/30 bg-grey/50 flex items-center justify-center text-sm opacity-60 italic`}
@@ -127,7 +150,7 @@ function Designguide() {
               de faste tilstande (normal, hover, active) for f.eks. primære og sekundære knapper.
             </p>
 
-            <ImageBox label="Tilføj billede — Atomic Design oversigt" />
+            <ImageBox seed="atomic-design" label="Midlertidigt billede — Atomic Design oversigt" />
 
             <DoDontList
               dos={[
@@ -144,7 +167,7 @@ function Designguide() {
                 Et hotspot er en god måde at indikere tydeligt, hvad næste step er. Dette komponent bruges til at sikre,
                 at brugeren ved, hvad der skal ske, og altid kan læse sig frem til, hvad de skal gøre.
               </p>
-              <ImageBox label="Tilføj billede — Hotspot" />
+              <ImageBox seed="hotspot" label="Midlertidigt billede — Hotspot" />
             </div>
 
             <div className="pt-4 space-y-3">
@@ -153,7 +176,7 @@ function Designguide() {
                 Oversigten over opgaver er der for at visualisere, hvor langt brugeren er i flowet. Derudover indeholder
                 den også en hurtig udvej fra flowet, hvilket er vigtigt for, at brugeren kan føle sig tryg.
               </p>
-              <ImageBox label="Tilføj billede — Opgaveoversigten" />
+              <ImageBox seed="opgaveoversigt" label="Midlertidigt billede — Opgaveoversigten" />
             </div>
 
             <div className="pt-4 space-y-3">
@@ -163,7 +186,7 @@ function Designguide() {
                 som i fremtiden viser sig at kræve oplæring. Elementet er placeret ved login-skærmen, da det ikke bør
                 være nødvendigt at være logget ind — flowsne foregår i et sandbox-miljø.
               </p>
-              <ImageBox label="Tilføj billede — Flow-bibliotek" />
+              <ImageBox seed="flow-bibliotek" label="Midlertidigt billede — Flow-bibliotek" />
             </div>
           </SectionShell>
 
@@ -186,7 +209,7 @@ function Designguide() {
               <ColorSwatch name="Mørkegrå / brødtekst" hex="#333333" textOn="dark" />
             </div>
 
-            <ImageBox label="Tilføj billede — eksempel på farveanvendelse" />
+            <ImageBox seed="farver" label="Midlertidigt billede — farveanvendelse" />
 
             <DoDontList
               dos={[
@@ -211,7 +234,7 @@ function Designguide() {
               ønskede indhold forbliver tydeligt.
             </p>
 
-            <ImageBox label="Tilføj billede — afstande og komposition" />
+            <ImageBox seed="komposition" label="Midlertidigt billede — afstande og komposition" />
 
             <DoDontList
               dos={[
@@ -281,7 +304,7 @@ function Designguide() {
               </table>
             </div>
 
-            <ImageBox label="Tilføj billede — tone of voice eksempel" />
+            <ImageBox seed="tone-of-voice" label="Midlertidigt billede — tone of voice" />
           </SectionShell>
 
           {/* 5. Typografi */}
@@ -293,7 +316,7 @@ function Designguide() {
               brugere.
             </p>
 
-            <ImageBox label="Tilføj billede — typografi-hierarki" />
+            <ImageBox seed="typografi" label="Midlertidigt billede — typografi-hierarki" />
 
             <DoDontList
               dos={[
