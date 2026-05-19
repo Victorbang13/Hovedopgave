@@ -399,12 +399,12 @@ function Designguide() {
               <CodeBlock
                 language="css"
                 code={`:root {
-  --color-primary:    #233d68;
-  --color-secondary:  #4faed1;
-  --color-ui-gray:    #626262;
-  --bg-light-blue:    #f0f8ff;
-  --bg-light-gray:    #f7f7f7;
-  --bg-white:         #ffffff;
+  --color-primary:    #233d68; /* mørkeblå — primær brandfarve */
+  --color-secondary:  #4faed1; /* lyseblå — sekundær accent */
+  --color-ui-gray:    #626262; /* neutral grå til UI-tekst og ikoner */
+  --bg-light-blue:    #f0f8ff; /* sart lyseblå baggrund */
+  --bg-light-gray:    #f7f7f7; /* lysegrå baggrund til sektioner */
+  --bg-white:         #ffffff; /* ren hvid baggrund */
 }`}
               />
             </div>
@@ -423,18 +423,18 @@ function Designguide() {
               <CodeBlock
                 language="css"
                 code={`:root {
-  --color-success-text: #4CAF50;
-  --color-success-bg:   #CEFFD1;
+  --color-success-text: #4CAF50; /* tekstfarve for success-beskeder */
+  --color-success-bg:   #CEFFD1; /* baggrund for success-beskeder */
 
-  --color-warning-text: #D38A33;
-  --color-warning-bg:   #FFF8B9;
+  --color-warning-text: #D38A33; /* tekstfarve for advarsler */
+  --color-warning-bg:   #FFF8B9; /* baggrund for advarsler */
 
-  --color-error-text:   #D32F2F;
-  --color-error-bg:     #FFDADA;
-  --color-exit-border:  #D32F2F; /* bruges som border på exit-knapper */
+  --color-error-text:   #D32F2F; /* tekstfarve for fejl */
+  --color-error-bg:     #FFDADA; /* baggrund for fejl */
+  --color-exit-border:  #D32F2F; /* border på exit-knapper */
 
-  --color-info-text:    #4FAED1;
-  --color-info-bg:      #E5F6FD;
+  --color-info-text:    #4FAED1; /* tekstfarve for info-beskeder */
+  --color-info-bg:      #E5F6FD; /* baggrund for info-beskeder */
 }`}
               />
             </div>
@@ -595,10 +595,10 @@ function Designguide() {
               <CodeBlock
                 language="css"
                 code={`p {
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: "Roboto", system-ui, sans-serif; /* primær skrifttype med fallback */
   font-size: 1rem;     /* 16px basis — skalerbar */
   line-height: 1.5;    /* skydning for læsbarhed */
-  font-weight: 400;
+  font-weight: 400;    /* regular vægt til brødtekst */
 }`}
               />
             </div>
