@@ -354,11 +354,11 @@ function Designguide() {
 
             <div className="space-y-6">
               <h3 className="text-xl text-primary pt-2">Oplæringsbibliotek</h3>
-              <ImageBox src={komposition1Img} label="afstande og komposition 1" />
+              <ImageBox src={komposition1Img} label="afstande og komposition 1" zoomable />
               <h3 className="text-xl text-primary pt-2">Opgaveoversigt</h3>
-              <ImageBox src={komposition2Img} label="afstande og komposition 2" />
+              <ImageBox src={komposition2Img} label="afstande og komposition 2" zoomable />
               <h3 className="text-xl text-primary pt-2">Hotspot</h3>
-              <ImageBox src={komposition3Img} label="afstande og komposition 3" />
+              <ImageBox src={komposition3Img} label="afstande og komposition 3" zoomable />
             </div>
 
             <DoDontList
