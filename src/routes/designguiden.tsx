@@ -15,6 +15,7 @@ import typografiImg from "@/assets/typografi.jpg";
 
 function FlowBibliotekEmbed() {
   const [fullscreen, setFullscreen] = useState(false);
+  const [active, setActive] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const iframeSrc =
@@ -63,6 +64,7 @@ function FlowBibliotekEmbed() {
             : "relative w-full overflow-hidden rounded-lg bg-white"
         }
         style={fullscreen ? undefined : { height: 700 }}
+        onMouseLeave={() => setActive(false)}
       >
         <iframe
           title="Flow-bibliotek prototype"
@@ -72,6 +74,18 @@ function FlowBibliotekEmbed() {
           loading="lazy"
           className="absolute top-0 left-0 w-full h-full border-0"
         />
+        {!active && (
+          <button
+            type="button"
+            onClick={() => setActive(true)}
+            className="absolute inset-0 z-10 flex items-center justify-center bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer"
+            aria-label="Aktivér prototype for at scrolle"
+          >
+            <span className="rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium shadow-md">
+              Klik for at interagere
+            </span>
+          </button>
+        )}
       </div>
     </div>
   );
