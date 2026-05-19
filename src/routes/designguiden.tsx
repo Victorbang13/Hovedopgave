@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { useIsMobile } from "@/hooks/use-mobile";
+import flowBibliotekImg from "@/assets/flow-bibliotek.png";
 
 function FlowBibliotekEmbed() {
   const isMobile = useIsMobile();
@@ -253,7 +254,7 @@ function Designguide() {
                 som i fremtiden viser sig at kræve oplæring. Elementet er placeret ved login-skærmen, da det ikke bør
                 være nødvendigt at være logget ind — flowsne foregår i et sandbox-miljø.
               </p>
-              <FlowBibliotekEmbed />
+              <ImageBox src={flowBibliotekImg} label="Flow-bibliotek" />
             </div>
           </SectionShell>
 
