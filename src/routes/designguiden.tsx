@@ -38,19 +38,17 @@ function FlowBibliotekEmbed() {
           : "w-full bg-white p-[15px] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)]"
       }
     >
-      {isMobile && (
-        <div className="flex justify-end pb-2">
-          <button
-            type="button"
-            onClick={toggleFullscreen}
-            className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-3 py-2 text-sm font-medium"
-            aria-label={fullscreen ? "Luk fuld skærm" : "Vis i fuld skærm"}
-          >
-            {fullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-            {fullscreen ? "Luk fuld skærm" : "Fuld skærm"}
-          </button>
-        </div>
-      )}
+      <div className="flex justify-end pb-2">
+        <button
+          type="button"
+          onClick={toggleFullscreen}
+          className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-3 py-2 text-sm font-medium"
+          aria-label={fullscreen ? "Luk fuld skærm" : "Vis i fuld skærm"}
+        >
+          {fullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+          {fullscreen ? "Luk fuld skærm" : "Fuld skærm"}
+        </button>
+      </div>
       <div
         className={
           fullscreen
