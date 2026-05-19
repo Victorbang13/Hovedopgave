@@ -236,7 +236,7 @@ function Designguide() {
               Elementerne er opbygget ved brug af Atomic Design, hvilket sikrer, at nye flows laves med elementer,
               som består af de samme atomer, molekyler og organismer. Ved at bruge denne opbygning sikrer vi, at det
               kun er teksten til de forskellige flows, der differentierer sig. Det gør det nemt for Amero at genbruge
-              de faste tilstande (normal, hover, active) for f.eks. primære og sekundære knapper.
+              elementerne.
             </p>
 
             <FlowBibliotekEmbed />
