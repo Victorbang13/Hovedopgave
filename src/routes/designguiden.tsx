@@ -5,7 +5,6 @@ import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import flowBibliotekImg from "@/assets/flow-bibliotek.png";
 
 function FlowBibliotekEmbed() {
-  const isMobile = useIsMobile();
   const [fullscreen, setFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
