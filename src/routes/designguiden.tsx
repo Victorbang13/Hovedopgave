@@ -9,6 +9,7 @@ import komposition1Img from "@/assets/komposition-1.png";
 import komposition2Img from "@/assets/komposition-2.png";
 import komposition3Img from "@/assets/komposition-3.png";
 import toneOfVoiceImg from "@/assets/tone-of-voice.png";
+import typografiImg from "@/assets/typografi.jpg";
 
 
 
@@ -445,7 +446,7 @@ function Designguide() {
               brugere.
             </p>
 
-            <ImageBox seed="typografi" label="typografi-hierarki" />
+            <ImageBox src={typografiImg} label="typografi-hierarki" />
 
             <DoDontList
               dos={[
