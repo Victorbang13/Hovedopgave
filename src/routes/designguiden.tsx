@@ -384,8 +384,8 @@ function Designguide() {
                   <tr className="bg-primary/5 text-left">
                     <th className="p-3 border border-primary/15 font-semibold text-primary">Karakteristika</th>
                     <th className="p-3 border border-primary/15 font-semibold text-primary">Beskrivelse</th>
-                    <th className="p-3 border border-primary/15 font-semibold text-primary">Do</th>
-                    <th className="p-3 border border-primary/15 font-semibold text-primary">Don't</th>
+                    <th className="p-3 border border-primary/15 font-semibold text-primary">Gør dette</th>
+                    <th className="p-3 border border-primary/15 font-semibold text-primary">Gør ikke dette</th>
                   </tr>
                 </thead>
                 <tbody className="align-top">
