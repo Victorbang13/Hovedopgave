@@ -431,6 +431,7 @@ function Designguide() {
 
   --color-error-text:   #D32F2F;
   --color-error-bg:     #FFDADA;
+  --color-exit-border:  #D32F2F; /* bruges som border på exit-knapper */
 
   --color-info-text:    #4FAED1;
   --color-info-bg:      #E5F6FD;
