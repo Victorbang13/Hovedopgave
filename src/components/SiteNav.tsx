@@ -170,8 +170,11 @@ export function SiteNav() {
 export function SiteFooter() {
   return (
     <footer className="bg-primary on-primary text-primary-foreground mt-16">
-      <div className="mx-auto max-w-6xl px-4 py-6 text-sm">
-        © {new Date().getFullYear()} AMERO — FlexPOS Onboarding
+      <div className="mx-auto max-w-6xl px-4 py-6 text-sm space-y-2">
+        <p>© {new Date().getFullYear()} AMERO — FlexPOS Onboarding</p>
+        <p className="opacity-80">
+          Denne hjemmeside er udelukkende lavet til skolebrug og repræsenterer ikke Amero.
+        </p>
       </div>
     </footer>
   );
