@@ -54,7 +54,7 @@ export function SiteNav() {
             aria-label="Amero – forside"
           >
             <img
-              src="/amero-logo.png"
+              src={ameroLogo}
               alt="Amero"
               className="h-8 w-auto"
             />
