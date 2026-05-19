@@ -431,7 +431,7 @@ function Designguide() {
               <ColorSwatch name="Lyseblå - Baggrund" hex="#F0F8FF" />
               <ColorSwatch name="Lysegrå - Baggrund" hex="#F7F7F7" />
               <ColorSwatch name="Hvid - Baggrund" hex="#FFFFFF" />
-              <ColorSwatch name="Mørkegrå / brødtekst" hex="#333333" textOn="dark" />
+              <ColorSwatch name="Mørkegrå - Brødtekst" hex="#333333" textOn="dark" />
             </div>
 
             <div className="pt-2 space-y-3">
