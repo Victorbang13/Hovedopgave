@@ -389,6 +389,55 @@ function Designguide() {
               <ColorSwatch name="Mørkegrå / brødtekst" hex="#333333" textOn="dark" />
             </div>
 
+            <div className="pt-2 space-y-3">
+              <h3 className="text-xl text-primary">Design Tokens</h3>
+              <p>
+                Brug disse CSS-variabler som single source of truth for farver i koden. Definér dem én gang i <code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">:root</code> og referer altid via <code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">var(--token)</code>.
+              </p>
+              <CodeBlock
+                language="css"
+                code={`:root {
+  --color-primary:    #233d68;
+  --color-secondary:  #4faed1;
+  --color-ui-gray:    #626262;
+  --bg-light-blue:    #f0f8ff;
+  --bg-light-gray:    #f7f7f7;
+  --bg-white:         #ffffff;
+}`}
+              />
+            </div>
+
+            <div className="pt-2 space-y-3">
+              <h3 className="text-xl text-primary">Statusfarver</h3>
+              <p>
+                Statusfarver bruges altid som par (tekst på baggrund) for at sikre tilstrækkelig kontrast og en konsistent feedback-oplevelse på tværs af flowet.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                <StatusSwatch name="Success" textHex="#4CAF50" bgHex="#CEFFD1" sample="Ændringerne er gemt" />
+                <StatusSwatch name="Warning" textHex="#D38A33" bgHex="#FFF8B9" sample="Husk at gemme" />
+                <StatusSwatch name="Error" textHex="#D32F2F" bgHex="#FFDADA" sample="Noget gik galt" />
+                <StatusSwatch name="Info" textHex="#4FAED1" bgHex="#E5F6FD" sample="God at vide" />
+              </div>
+              <CodeBlock
+                language="css"
+                code={`:root {
+  --color-success-text: #4CAF50;
+  --color-success-bg:   #CEFFD1;
+
+  --color-warning-text: #D38A33;
+  --color-warning-bg:   #FFF8B9;
+
+  --color-error-text:   #D32F2F;
+  --color-error-bg:     #FFDADA;
+
+  --color-info-text:    #4FAED1;
+  --color-info-bg:      #E5F6FD;
+}`}
+              />
+            </div>
+
+
+
 
 
             <DoDontList
