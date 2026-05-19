@@ -314,18 +314,19 @@ function Designguide() {
               <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">På denne side</p>
               <ul className="mt-4 space-y-2 text-sm">
                 {[
-                  { id: "brug-af-elementer", label: "1. Brug af elementer" },
-                  { id: "farver-og-kontraster", label: "2. Farver & Kontraster" },
-                  { id: "afstande-og-komposition", label: "3. Afstande og        Komposition" },
-                  { id: "tone-of-voice", label: "4. Tone of Voice" },
-                  { id: "typografi", label: "5. Typografi" },
+                  { id: "brug-af-elementer", num: "1.", label: "Brug af elementer" },
+                  { id: "farver-og-kontraster", num: "2.", label: "Farver & Kontraster" },
+                  { id: "afstande-og-komposition", num: "3.", label: "Afstande og Komposition" },
+                  { id: "tone-of-voice", num: "4.", label: "Tone of Voice" },
+                  { id: "typografi", num: "5.", label: "Typografi" },
                 ].map((item) => (
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="block rounded-sm px-2 py-1.5 text-primary hover:bg-primary/10 transition-colors"
+                      className="flex gap-1.5 rounded-sm px-2 py-1.5 text-primary hover:bg-primary/10 transition-colors"
                     >
-                      {item.label}
+                      <span className="shrink-0">{item.num}</span>
+                      <span>{item.label}</span>
                     </a>
                   </li>
                 ))}
