@@ -417,7 +417,7 @@ function Designguide() {
               <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
                 <StatusSwatch name="Success" textHex="#4CAF50" bgHex="#CEFFD1" sample="Ændringerne er gemt" />
                 <StatusSwatch name="Warning" textHex="#D38A33" bgHex="#FFF8B9" sample="Husk at gemme" />
-                <StatusSwatch name="Error" textHex="#D32F2F" bgHex="#FFDADA" sample="Noget gik galt" />
+                <StatusSwatch name="Error" textHex="#D32F2F" bgHex="#FFDADA" sample="Tekst & border til exit knap: #D32F2F" />
                 <StatusSwatch name="Info" textHex="#4FAED1" bgHex="#E5F6FD" sample="Godt at vide" />
               </div>
               <CodeBlock
