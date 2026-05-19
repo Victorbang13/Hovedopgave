@@ -150,6 +150,66 @@ function ImageBox({
   );
 }
 
+function CodeBlock({ code, language = "css" }: { code: string; language?: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* noop */
+    }
+  };
+  return (
+    <div className="relative rounded-sm border border-primary/15 bg-primary text-primary-foreground overflow-hidden">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-white/10 text-xs font-mono uppercase tracking-wider opacity-80">
+        <span>{language}</span>
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 rounded-sm bg-white/10 hover:bg-white/20 transition-colors px-2 py-1 text-xs font-medium"
+          aria-label="Kopiér kode"
+        >
+          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? "Kopieret" : "Kopiér"}
+        </button>
+      </div>
+      <pre className="overflow-x-auto p-4 text-sm leading-relaxed">
+        <code className="font-mono whitespace-pre">{code}</code>
+      </pre>
+    </div>
+  );
+}
+
+function StatusSwatch({
+  name,
+  textHex,
+  bgHex,
+  sample,
+}: {
+  name: string;
+  textHex: string;
+  bgHex: string;
+  sample: string;
+}) {
+  return (
+    <div className="rounded-sm border border-primary/10 overflow-hidden bg-white">
+      <div
+        className="px-4 py-5 text-sm font-medium"
+        style={{ backgroundColor: bgHex, color: textHex }}
+      >
+        {sample}
+      </div>
+      <div className="p-3 text-xs space-y-1">
+        <div className="font-medium text-sm">{name}</div>
+        <div className="font-mono opacity-70">Tekst: {textHex}</div>
+        <div className="font-mono opacity-70">Baggrund: {bgHex}</div>
+      </div>
+    </div>
+  );
+}
+
 function DoDontList({ dos, donts }: { dos: string[]; donts: string[] }) {
   return (
     <div className="grid gap-6 md:grid-cols-2 mt-6">
