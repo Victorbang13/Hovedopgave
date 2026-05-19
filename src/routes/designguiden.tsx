@@ -416,6 +416,7 @@ function Designguide() {
               ]}
             />
           </SectionShell>
+          </div>
         </div>
       </main>
       <SiteFooter />
