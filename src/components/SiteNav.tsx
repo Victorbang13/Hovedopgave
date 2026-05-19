@@ -26,7 +26,7 @@ export function SiteNav() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Mail size={13} aria-hidden="true" />
-              support@amero.dk
+              support@åmero.dk
             </span>
             <span>Vidensunivers</span>
             <span>Supportunivers</span>
