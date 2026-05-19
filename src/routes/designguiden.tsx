@@ -423,18 +423,18 @@ function Designguide() {
               <CodeBlock
                 language="css"
                 code={`:root {
-  --color-success-text: #4CAF50;
-  --color-success-bg:   #CEFFD1;
+  --color-success-text: #4CAF50; /* tekstfarve for success-beskeder */
+  --color-success-bg:   #CEFFD1; /* baggrund for success-beskeder */
 
-  --color-warning-text: #D38A33;
-  --color-warning-bg:   #FFF8B9;
+  --color-warning-text: #D38A33; /* tekstfarve for advarsler */
+  --color-warning-bg:   #FFF8B9; /* baggrund for advarsler */
 
-  --color-error-text:   #D32F2F;
-  --color-error-bg:     #FFDADA;
-  --color-exit-border:  #D32F2F; /* bruges som border på exit-knapper */
+  --color-error-text:   #D32F2F; /* tekstfarve for fejl */
+  --color-error-bg:     #FFDADA; /* baggrund for fejl */
+  --color-exit-border:  #D32F2F; /* border på exit-knapper */
 
-  --color-info-text:    #4FAED1;
-  --color-info-bg:      #E5F6FD;
+  --color-info-text:    #4FAED1; /* tekstfarve for info-beskeder */
+  --color-info-bg:      #E5F6FD; /* baggrund for info-beskeder */
 }`}
               />
             </div>
