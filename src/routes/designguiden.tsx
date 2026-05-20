@@ -787,7 +787,7 @@ function Designguide() {
                 "Angiv altid width og height på <img>, så browseren reserverer plads og undgår layout shifts.",
               ]}
               donts={[
-                "Upload aldrig ukomprimerede PNG/JPG-originaler direkte i løsningen — det belaster både brugerens netværk og klimaet unødigt.",
+                "Upload aldrig ukomprimerede PNG/JPG-originaler direkte i løsningen, det belaster både brugerens netværk og klimaet unødigt.",
               ]}
             />
           </SectionShell>
