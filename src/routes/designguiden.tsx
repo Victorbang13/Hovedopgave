@@ -758,7 +758,7 @@ function Designguide() {
           <SectionShell id="baeredygtighed" number={9} title="Bæredygtighed og Billeder">
             <p>
               Vi tager aktivt ansvar for at minimere dataoverførsel. Hver kilobyte, der sendes over nettet, koster
-              energi — og dermed CO₂. Et let og hurtigt frontend er derfor både god UX og god klimapraksis.
+              energi og dermed CO₂. Et let og hurtigt frontend er derfor både god UX og god klimapraksis.
             </p>
             <p>
               Billeder er typisk den tungeste asset-type i en webløsning, og det er her, vi får mest miljøgevinst pr.
