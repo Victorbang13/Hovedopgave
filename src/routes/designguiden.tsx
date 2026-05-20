@@ -649,15 +649,10 @@ function Designguide() {
               struktur, der sikrer, at indhold, knapper og pop-ups altid placeres konsistent i forhold til hinanden.
             </p>
             <p>
-              Layoutet er designet specifikt til <strong>computerskærme</strong>, primært stationære POS-touchskærme i
-              butiksmiljø. Det betyder, at vi <em>ikke</em> arbejder med klassiske mobile/tablet-breakpoints, og at
-              programmøren kan se bort fra responsivt design til små skærme.
-            </p>
-            <p>
-              Selvom løsningen er desktop-only, skal layoutet stadig kodes <strong>fleksibelt</strong>, så det kan tåle
-              mindre variationer i skærmstørrelse inden for desktop-formatet (f.eks. forskellige POS-modeller og
-              opløsninger). Brug relative enheder, fluid widths og <code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">minmax()</code> frem
-              for faste pixelbredder, så indholdet skalerer pænt mellem de gængse desktop-opløsninger.
+              <strong>Fleksibelt 12-kolonne grid:</strong> Selvom løsningen primært er til desktop-POS-skærme, varierer
+              de meget i Aspect Ratio (fra ældre 4:3 skærme til moderne 16:9 bredskærme). Derfor <strong>SKAL</strong> layoutet
+              kodes fleksibelt (f.eks. ved brug af CSS Grid eller Flexbox), så elementerne automatisk tilpasser sig skærmens
+              format og udnytter pladsen optimalt.
             </p>
             <CodeBlock
               language="css"
