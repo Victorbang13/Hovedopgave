@@ -639,6 +639,159 @@ function Designguide() {
               ]}
             />
           </SectionShell>
+
+          {/* 6. Grid og Layout */}
+          <SectionShell id="grid-og-layout" number={6} title="Grid og Layout">
+            <p>
+              Hele løsningen er bygget over et <strong>12-kolonne grid</strong>. Gridet fungerer som den underliggende
+              struktur, der sikrer, at indhold, knapper og pop-ups altid placeres konsistent i forhold til hinanden.
+            </p>
+            <p>
+              Layoutet er designet specifikt til <strong>computerskærme</strong> — primært stationære POS-touchskærme i
+              butiksmiljø. Det betyder, at vi <em>ikke</em> arbejder med klassiske mobile/tablet-breakpoints, og at
+              programmøren kan se bort fra responsivt design til små skærme.
+            </p>
+            <p>
+              Selvom løsningen er desktop-only, skal layoutet stadig kodes <strong>fleksibelt</strong>, så det kan tåle
+              mindre variationer i skærmstørrelse inden for desktop-formatet (f.eks. forskellige POS-modeller og
+              opløsninger). Brug relative enheder, fluid widths og <code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">minmax()</code> frem
+              for faste pixelbredder, så indholdet skalerer pænt mellem de gængse desktop-opløsninger.
+            </p>
+            <CodeBlock
+              language="css"
+              code={`.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr)); /* 12-kolonne grid */
+  gap: 1.5rem;                                       /* 24px gutter */
+  width: 100%;
+  max-width: 1920px;                                 /* loft for store POS-skærme */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 2rem);            /* fleksibelt sideluft */
+}`}
+            />
+            <ImageBox label="Tilføj billede af grid-systemet" />
+          </SectionShell>
+
+          {/* 7. Ikoner */}
+          <SectionShell id="ikoner" number={7} title="Ikoner">
+            <p>
+              Ikoner bruges som visuelle ankre, der hjælper brugeren med hurtigt at afkode handlinger. De skal altid
+              fremstå rolige, konsistente og være tilgængelige for skærmlæsere.
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {[
+                { Icon: X, name: "Luk", label: "Luk dialog" },
+                { Icon: ArrowRight, name: "Næste", label: "Gå til næste trin" },
+                { Icon: Check, name: "Bekræft", label: "Bekræft handling" },
+                { Icon: ChevronLeft, name: "Tilbage", label: "Gå tilbage" },
+              ].map(({ Icon, name, label }) => (
+                <div key={name} className="rounded-sm border border-primary/10 bg-white p-5 flex flex-col items-center gap-3">
+                  <Icon className="h-8 w-8 text-primary" aria-label={label} />
+                  <div className="text-sm font-medium">{name}</div>
+                  <div className="font-mono text-xs opacity-70 text-center">aria-label="{label}"</div>
+                </div>
+              ))}
+            </div>
+
+            <CodeBlock
+              language="html"
+              code={`<!-- Ikon som knap — altid med aria-label -->
+<button type="button" aria-label="Luk dialog">
+  <svg aria-hidden="true" focusable="false"><!-- ikon-path --></svg>
+</button>
+
+<!-- Dekorativt ikon ved siden af tekst — skjules for skærmlæser -->
+<span>
+  <svg aria-hidden="true" focusable="false"><!-- ikon-path --></svg>
+  Næste
+</span>`}
+            />
+
+            <DoDontList
+              dos={[
+                "Kod altid ikoner med en alternativ tekst (aria-label på knap-ikoner eller alt-tekst på img-ikoner). Det er et ufravigeligt WCAG-krav for ikke-tekstligt indhold og sikrer, at skærmlæsere kan afkode handlingen.",
+                "Skjul rent dekorative ikoner ved siden af tekst med aria-hidden=\"true\", så samme information ikke læses op to gange.",
+              ]}
+              donts={[
+                "Roter (drej) aldrig ikonerne via CSS eller i designet. De skal altid fremstå præcis som defineret i biblioteket for at bevare et roligt og konsekvent udtryk.",
+                "Brug aldrig et ikon alene som handling uden en tilknyttet tekstlig betydning (aria-label eller synlig label).",
+              ]}
+            />
+          </SectionShell>
+
+          {/* 8. Tastaturnavigation og Fokus */}
+          <SectionShell id="tastaturnavigation" number={8} title="Tastaturnavigation og Fokus">
+            <p>
+              Systemet skal kunne betjenes fuldt ud af brugere, der anvender tastatur — enten af nødvendighed
+              (skærmlæser, motoriske udfordringer) eller af vane. Det betyder, at alle interaktive elementer skal kunne
+              nås og aktiveres via <kbd className="font-mono text-xs px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20">Tab</kbd>,
+              <kbd className="font-mono text-xs px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 ml-1">Shift + Tab</kbd> og
+              <kbd className="font-mono text-xs px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 ml-1">Enter</kbd>.
+            </p>
+            <p>
+              Det er afgørende, at det altid er <strong>visuelt tydeligt</strong>, hvor brugeren befinder sig i
+              tab-rækkefølgen. Fokus-rammen er brugerens "markør" og må aldrig fjernes uden et fuldværdigt alternativ.
+            </p>
+            <CodeBlock
+              language="css"
+              code={`/* Synlig fokus-ramme på alle interaktive elementer */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}`}
+            />
+
+            <DoDontList
+              dos={[
+                "Sørg for, at alle interaktive elementer (knapper, links, input-felter) kan tilgås og aktiveres med tastaturet alene.",
+                "Brug :focus-visible til at vise en tydelig fokus-ramme med god kontrast til baggrunden.",
+              ]}
+              donts={[
+                "Fjern aldrig systemets standard fokus-ramme (outline: none; i CSS) fra interaktive elementer uden at definere en ny. Det skal altid være tydeligt for brugeren, hvor de er, hvis de navigerer ved hjælp af et tastatur (Tab-tasten).",
+              ]}
+            />
+          </SectionShell>
+
+          {/* 9. Bæredygtighed og Billeder */}
+          <SectionShell id="baeredygtighed" number={9} title="Bæredygtighed og Billeder">
+            <p>
+              Vi tager aktivt ansvar for at minimere dataoverførsel. Hver kilobyte, der sendes over nettet, koster
+              energi — og dermed CO₂. Et let og hurtigt frontend er derfor både god UX og god klimapraksis.
+            </p>
+            <p>
+              Billeder er typisk den tungeste asset-type i en webløsning, og det er her, vi får mest miljøgevinst pr.
+              indsats. Komprimering og moderne formater som <strong>WebP</strong> reducerer filstørrelsen markant uden
+              synlig kvalitetsforringelse.
+            </p>
+            <CodeBlock
+              language="html"
+              code={`<!-- Brug <picture> med WebP og et fallback-format -->
+<picture>
+  <source srcset="/img/hero.webp" type="image/webp" />
+  <img
+    src="/img/hero.jpg"
+    alt="Beskrivende alternativ tekst"
+    loading="lazy"
+    decoding="async"
+    width="1200"
+    height="675"
+  />
+</picture>`}
+            />
+
+            <DoDontList
+              dos={[
+                "For at sikre bæredygtigt webdesign og hurtig performance skal alle billedfiler i løsningen komprimeres og konverteres til moderne webformater som WebP for at reducere dataoverførsel og CO₂-udledning.",
+                "Brug loading=\"lazy\" på billeder under folden, så de først hentes, når brugeren scroller dem ind i viewporten.",
+                "Angiv altid width og height på <img>, så browseren reserverer plads og undgår layout shifts.",
+              ]}
+              donts={[
+                "Upload aldrig ukomprimerede PNG/JPG-originaler direkte i løsningen — det belaster både brugerens netværk og klimaet unødigt.",
+              ]}
+            />
+          </SectionShell>
           </div>
         </div>
       </main>
