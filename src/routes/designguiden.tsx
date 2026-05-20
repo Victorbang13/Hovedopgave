@@ -11,6 +11,7 @@ import komposition3Img from "@/assets/komposition-3.png";
 import toneOfVoiceImg from "@/assets/tone-of-voice.png";
 import typografiImg from "@/assets/typografi.jpg";
 import ikonStjerneImg from "@/assets/ikon-stjerne-ny.webp";
+import gridLayoutImg from "@/assets/grid-layout.png";
 
 
 
@@ -670,7 +671,7 @@ function Designguide() {
   padding-inline: clamp(1rem, 2vw, 2rem);            /* fleksibelt sideluft */
 }`}
             />
-            <ImageBox label="Tilføj billede af grid-systemet" />
+            <ImageBox src={gridLayoutImg} label="12-kolonne grid på POS-skærmen" zoomable />
           </SectionShell>
 
           {/* 7. Ikoner */}
