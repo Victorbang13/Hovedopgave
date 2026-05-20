@@ -629,8 +629,7 @@ function Designguide() {
                 Brødtekst skal altid kodes med relative enheder (<code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">rem</code>). Faste pixelværdier er forbudt af hensyn til WCAG 2.1, så brugeren kan zoome op til 200 % uden at designet knækker.
               </p>
               <p>
-                <strong>Hvorfor rem?</strong> Målgruppen består blandt andet af ældre frivillige i genbrugsbutikker med nedsat
-                syn. Ved at kombinere relative enheder (rem) med det fleksible layout sikrer vi, at de kan bruge systemets
+                <strong>Hvorfor rem?</strong> Ved at kombinere relative enheder (rem) med det fleksible layout sikrer vi, at de kan bruge systemets
                 zoom-funktion til at forstørre teksten med op til 200 %. Flexbox-layoutet sikrer her, at knapper og tekst
                 proportionalt skubbes på plads (wrap) uden at forsvinde ud af skærmen eller overlappe.
               </p>
