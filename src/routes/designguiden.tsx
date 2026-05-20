@@ -394,6 +394,16 @@ function Designguide() {
               </p>
               <ImageBox src={flowBibliotekImg} label="Flow-bibliotek" />
             </div>
+
+            <div className="pt-4 space-y-3">
+              <h3 className="text-xl text-primary">Touch Targets og OnScreen Keyboard</h3>
+              <p>
+                Mange POS-systemer kører fuld touch uden fysisk tastatur. Sørg for, at alle interaktive elementer har et
+                tilstrækkeligt stort klik-areal (touch target). Vær desuden opmærksom på at efterlade nok plads (white space)
+                i bunden af layoutet til, at et OnScreen Keyboard kan glide op, uden at det dækker for vigtige handlinger
+                som "Næste" eller "Afslut oplæring".
+              </p>
+            </div>
           </SectionShell>
 
           {/* 2. Farver & Kontraster */}
@@ -618,6 +628,12 @@ function Designguide() {
               <p>
                 Brødtekst skal altid kodes med relative enheder (<code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">rem</code>). Faste pixelværdier er forbudt af hensyn til WCAG 2.1, så brugeren kan zoome op til 200 % uden at designet knækker.
               </p>
+              <p>
+                <strong>Hvorfor rem?</strong> Målgruppen består blandt andet af ældre frivillige i genbrugsbutikker med nedsat
+                syn. Ved at kombinere relative enheder (rem) med det fleksible layout sikrer vi, at de kan bruge systemets
+                zoom-funktion til at forstørre teksten med op til 200 %. Flexbox-layoutet sikrer her, at knapper og tekst
+                proportionalt skubbes på plads (wrap) uden at forsvinde ud af skærmen eller overlappe.
+              </p>
               <CodeBlock
                 language="css"
                 code={`p {
@@ -649,15 +665,10 @@ function Designguide() {
               struktur, der sikrer, at indhold, knapper og pop-ups altid placeres konsistent i forhold til hinanden.
             </p>
             <p>
-              Layoutet er designet specifikt til <strong>computerskærme</strong>, primært stationære POS-touchskærme i
-              butiksmiljø. Det betyder, at vi <em>ikke</em> arbejder med klassiske mobile/tablet-breakpoints, og at
-              programmøren kan se bort fra responsivt design til små skærme.
-            </p>
-            <p>
-              Selvom løsningen er desktop-only, skal layoutet stadig kodes <strong>fleksibelt</strong>, så det kan tåle
-              mindre variationer i skærmstørrelse inden for desktop-formatet (f.eks. forskellige POS-modeller og
-              opløsninger). Brug relative enheder, fluid widths og <code className="font-mono text-sm px-1.5 py-0.5 rounded bg-primary/10">minmax()</code> frem
-              for faste pixelbredder, så indholdet skalerer pænt mellem de gængse desktop-opløsninger.
+              <strong>Fleksibelt 12-kolonne grid:</strong> Selvom løsningen primært er til desktop-POS-skærme, varierer
+              de meget i Aspect Ratio (fra ældre 4:3 skærme til moderne 16:9 bredskærme). Derfor <strong>SKAL</strong> layoutet
+              kodes fleksibelt (f.eks. ved brug af CSS Grid eller Flexbox), så elementerne automatisk tilpasser sig skærmens
+              format og udnytter pladsen optimalt.
             </p>
             <CodeBlock
               language="css"
