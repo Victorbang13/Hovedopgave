@@ -394,6 +394,16 @@ function Designguide() {
               </p>
               <ImageBox src={flowBibliotekImg} label="Flow-bibliotek" />
             </div>
+
+            <div className="pt-4 space-y-3">
+              <h3 className="text-xl text-primary">Touch Targets og OnScreen Keyboard</h3>
+              <p>
+                Mange POS-systemer kører fuld touch uden fysisk tastatur. Sørg for, at alle interaktive elementer har et
+                tilstrækkeligt stort klik-areal (touch target). Vær desuden opmærksom på at efterlade nok plads (white space)
+                i bunden af layoutet til, at et OnScreen Keyboard kan glide op, uden at det dækker for vigtige handlinger
+                som "Næste" eller "Afslut oplæring".
+              </p>
+            </div>
           </SectionShell>
 
           {/* 2. Farver & Kontraster */}
