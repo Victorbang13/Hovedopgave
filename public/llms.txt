@@ -1,0 +1,9 @@
+# AMERO — FlexPOS Onboarding
+
+> Et intuitivt onboarding-flow til FlexPOS, der gør oplæringen tryg og ensartet for nye medarbejdere og frivillige i butikker.
+
+## Pages
+
+- [Forside](/): Introduktion til det nye indbyggede onboarding-flow i FlexPOS og dets fordele.
+- [Prototypen](/prototypen): Interaktiv Figma-prototype af onboarding-flowet, som kan afprøves direkte.
+- [Designguiden](/designguiden): Designprincipper, komponenter, typografi, grid og tilgængelighed for FlexPOS onboarding.

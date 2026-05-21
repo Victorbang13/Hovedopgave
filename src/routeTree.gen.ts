@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrototypenRouteImport } from './routes/prototypen'
 import { Route as DesignguidenRouteImport } from './routes/designguiden'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrototypenRoute = PrototypenRouteImport.update({
   id: '/prototypen',
   path: '/prototypen',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/designguiden': typeof DesignguidenRoute
   '/prototypen': typeof PrototypenRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/designguiden': typeof DesignguidenRoute
   '/prototypen': typeof PrototypenRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/designguiden': typeof DesignguidenRoute
   '/prototypen': typeof PrototypenRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/designguiden' | '/prototypen'
+  fullPaths: '/' | '/designguiden' | '/prototypen' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/designguiden' | '/prototypen'
-  id: '__root__' | '/' | '/designguiden' | '/prototypen'
+  to: '/' | '/designguiden' | '/prototypen' | '/sitemap.xml'
+  id: '__root__' | '/' | '/designguiden' | '/prototypen' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DesignguidenRoute: typeof DesignguidenRoute
   PrototypenRoute: typeof PrototypenRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prototypen': {
       id: '/prototypen'
       path: '/prototypen'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DesignguidenRoute: DesignguidenRoute,
   PrototypenRoute: PrototypenRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

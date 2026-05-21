@@ -55,7 +55,7 @@ export function SiteNav() {
           >
             <img
               src={ameroLogo}
-              alt="Amero"
+              alt="Amero logo"
               className="h-8 w-auto"
             />
           </Link>
