@@ -26,21 +26,33 @@ function SideNav({ items }: { items: NavItem[] }) {
       .filter((el): el is HTMLElement => !!el);
     if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) {
-          setActiveId(visible[0].target.id);
+    const computeActive = () => {
+      const offset = window.innerHeight * 0.3;
+      // If scrolled to bottom, force last section active
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        setActiveId(sections[sections.length - 1].id);
+        return;
+      }
+      let current = sections[0].id;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top - offset <= 0) {
+          current = s.id;
+        } else {
+          break;
         }
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 1] },
-    );
+      }
+      setActiveId(current);
+    };
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    computeActive();
+    window.addEventListener("scroll", computeActive, { passive: true });
+    window.addEventListener("resize", computeActive);
+    return () => {
+      window.removeEventListener("scroll", computeActive);
+      window.removeEventListener("resize", computeActive);
+    };
   }, [items]);
+
 
   return (
     <aside aria-label="Indhold på siden" className="hidden lg:block">
