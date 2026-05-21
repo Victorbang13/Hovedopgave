@@ -427,28 +427,9 @@ function Designguide() {
                 Et hotspot er en god måde at indikere tydeligt, hvad næste step er. Dette komponent bruges til at sikre,
                 at brugeren ved, hvad der skal ske, og altid kan læse sig frem til, hvad de skal gøre.
               </p>
-              <ImageBox src={hotspotImg} label="Hotspot" />
-
-            </div>
-
-
-            <div className="pt-4 space-y-3">
-              <h3 className="text-xl text-primary">Opgaveoversigten</h3>
-              <p>
-                Oversigten over opgaver er der for at visualisere, hvor langt brugeren er i flowet. Derudover indeholder
-                den også en hurtig udvej fra flowet, hvilket er vigtigt for, at brugeren kan føle sig tryg.
-              </p>
-              <ImageBox src={opgaveoversigtImg} label="Opgaveoversigten" />
-            </div>
-
-            <div className="pt-4 space-y-3">
-              <h3 className="text-xl text-primary">Flow-bibliotek</h3>
-              <p>
-                I dette element er der mulighed for at tilføje flere flows. Det åbner muligheden for at oplære i flows,
-                som i fremtiden viser sig at kræve oplæring. Elementet er placeret ved login-skærmen, da det ikke bør
-                være nødvendigt at være logget ind.
-              </p>
-              <ImageBox src={flowBibliotekImg} label="Flow-bibliotek" />
+              <ImageBox src={hotspotImg} label="Diagram af hotspot-komponent i FlexPOS" />
+...
+              <ImageBox src={flowBibliotekImg} label="Skærmbillede af flow-bibliotek i FlexPOS" />
             </div>
 
             <div className="pt-4 space-y-3">
@@ -700,7 +681,7 @@ function Designguide() {
               />
             </div>
 
-            <ImageBox src={typografiImg} label="typografi-hierarki" />
+            <ImageBox src={typografiImg} label="Diagram af typografi-hierarki" />
 
 
             <DoDontList
@@ -752,7 +733,7 @@ function Designguide() {
               <div className="rounded-sm border border-primary/10 bg-white p-6 flex flex-col items-center gap-3 max-w-xs">
                 <img
                   src={ikonStjerneImg}
-                  alt="Stjerne-ikon"
+                  alt="Ikon af en stjerne"
                   className="h-16 w-16 object-contain"
                 />
                 <div className="text-sm font-medium">Stjerne</div>
