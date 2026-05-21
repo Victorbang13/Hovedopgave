@@ -428,7 +428,26 @@ function Designguide() {
                 at brugeren ved, hvad der skal ske, og altid kan læse sig frem til, hvad de skal gøre.
               </p>
               <ImageBox src={hotspotImg} label="Diagram af hotspot-komponent i FlexPOS" />
-...
+
+            </div>
+
+
+            <div className="pt-4 space-y-3">
+              <h3 className="text-xl text-primary">Opgaveoversigten</h3>
+              <p>
+                Oversigten over opgaver er der for at visualisere, hvor langt brugeren er i flowet. Derudover indeholder
+                den også en hurtig udvej fra flowet, hvilket er vigtigt for, at brugeren kan føle sig tryg.
+              </p>
+              <ImageBox src={opgaveoversigtImg} label="Skærmbillede af opgaveoversigten i FlexPOS" />
+            </div>
+
+            <div className="pt-4 space-y-3">
+              <h3 className="text-xl text-primary">Flow-bibliotek</h3>
+              <p>
+                I dette element er der mulighed for at tilføje flere flows. Det åbner muligheden for at oplære i flows,
+                som i fremtiden viser sig at kræve oplæring. Elementet er placeret ved login-skærmen, da det ikke bør
+                være nødvendigt at være logget ind.
+              </p>
               <ImageBox src={flowBibliotekImg} label="Skærmbillede af flow-bibliotek i FlexPOS" />
             </div>
 
