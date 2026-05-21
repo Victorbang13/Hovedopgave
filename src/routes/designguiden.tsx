@@ -314,34 +314,20 @@ function Designguide() {
         </section>
 
         <div className="mx-auto max-w-6xl px-4 py-12 grid gap-10 lg:grid-cols-[220px_1fr]">
-          <aside aria-label="Indhold på siden" className="hidden lg:block">
-            <nav className="sticky top-32 rounded-sm border border-primary/10 bg-grey p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">På denne side</p>
-              <ul className="mt-4 space-y-2 text-sm">
-                {[
-                  { id: "brug-af-elementer", num: "1.", label: "Brug af elementer" },
-                  { id: "farver-og-kontraster", num: "2.", label: "Farver & Kontraster" },
-                  { id: "afstande-og-komposition", num: "3.", label: "Afstande og Komposition" },
-                  { id: "tone-of-voice", num: "4.", label: "Tone of Voice" },
-                  { id: "typografi", num: "5.", label: "Typografi" },
-                  { id: "grid-og-layout", num: "6.", label: "Grid og Layout" },
-                  { id: "ikoner", num: "7.", label: "Ikoner" },
-                  { id: "tastaturnavigation", num: "8.", label: "Tastaturnavigation og Fokus" },
-                  { id: "baeredygtighed", num: "9.", label: "Bæredygtighed og Billeder" },
-                ].map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      className="flex gap-1.5 rounded-sm px-2 py-1.5 text-primary hover:bg-primary/10 transition-colors"
-                    >
-                      <span className="shrink-0">{item.num}</span>
-                      <span>{item.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </aside>
+          <SideNav
+            items={[
+              { id: "brug-af-elementer", num: "1.", label: "Brug af elementer" },
+              { id: "farver-og-kontraster", num: "2.", label: "Farver & Kontraster" },
+              { id: "afstande-og-komposition", num: "3.", label: "Afstande og Komposition" },
+              { id: "tone-of-voice", num: "4.", label: "Tone of Voice" },
+              { id: "typografi", num: "5.", label: "Typografi" },
+              { id: "grid-og-layout", num: "6.", label: "Grid og Layout" },
+              { id: "ikoner", num: "7.", label: "Ikoner" },
+              { id: "tastaturnavigation", num: "8.", label: "Tastaturnavigation og Fokus" },
+              { id: "baeredygtighed", num: "9.", label: "Bæredygtighed og Billeder" },
+            ]}
+          />
+
 
           <div className="space-y-10 min-w-0">
           {/* 1. Brug af elementer */}
