@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Maximize2, Minimize2, Check, Copy, X, ArrowRight, ChevronLeft } from "lucide-react";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import flowBibliotekImg from "@/assets/flow-bibliotek.png";
-import hotspotImg from "@/assets/hotspot.png";
+import hotspotImg from "@/assets/hotspot.webp";
 import opgaveoversigtImg from "@/assets/opgaveoversigt.png";
 import komposition1Img from "@/assets/komposition-1.webp";
 import komposition2Img from "@/assets/komposition-2.webp";
