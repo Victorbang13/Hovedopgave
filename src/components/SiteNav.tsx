@@ -214,8 +214,8 @@ export function SiteFooter() {
           </p>
         </div>
         {/* Carbon Badge fra websitecarbon.com — viser sidens CO2-aftryk. */}
-        <div id="wcb" className="carbonbadge wcb-d" />
-        <script async defer src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" />
+        <CarbonBadge />
+
       </div>
     </footer>
   );
