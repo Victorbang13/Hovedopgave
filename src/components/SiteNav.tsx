@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, Star, Menu, X, ArrowRight } from "lucide-react";
 import ameroLogo from "@/assets/amero-logo.webp";
+import { CarbonBadge } from "@/components/CarbonBadge";
+
 
 // Fælles styling for nav-links i desktop-navigationen.
 // Defineret som konstanter for at undgå gentagelse og sikre konsistens.
